@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   underline.style.width = `${tabs[0].offsetWidth}px`;
 
   tabsWrap.addEventListener("click", ({ target }) => {
-    if(target.tagName === 'BUTTON') {
+    if (target.tagName === 'BUTTON') {
       underline.style.width = `${target.offsetWidth}px`;
       underline.style.left = `${target.offsetLeft}px`;
       const currentTab = target.dataset.tab;
