@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonFollow.addEventListener("click", () => {
     if (buttonText.textContent === UNFOLLOW) {
       buttonText.textContent = FOLLOW;
-      buttonFollow.style.backgroundColor = null;
+      buttonFollow.classList.remove('bg-gray-dark', 'hover:bg-gray-middle')
     } else {
       buttonText.textContent = UNFOLLOW;
-      buttonFollow.style.backgroundColor = COLOR_GRAY;
+      buttonFollow.classList.add('bg-gray-dark', 'hover:bg-gray-middle')
     }
     buttonSvg.classList.toggle("hidden");
   });
