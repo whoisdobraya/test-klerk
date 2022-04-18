@@ -1,0 +1,58 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.body {
+  font-family: "Roboto";
+}
+
+.arrow::after {
+  content: '';
+  position: absolute;
+  top: 55%;
+  right: 0;
+  width: 13px;
+  height: 16px;
+  background: url('./img/arrow-right.svg') no-repeat;
+  background-size: 13px 16px;
+  transform: translateY(-50%);
+  display: block;
+}
+
+.underline {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #316FEE;
+  transition: 0.3s;
+}
+
+
+  @media(max-width: 650px) {
+    .grid-areas {
+      grid-template-areas: "picture button"
+                          "info info";    
+    } 
+  .picture {
+    grid-area: picture;
+  }
+  .info {
+    grid-area: info;
+  }
+  .button {
+    grid-area: button;
+    justify-self: end;
+  }
+}
