@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonFollow.addEventListener("click", () => {
     if (buttonText.textContent === UNFOLLOW) {
       buttonText.textContent = FOLLOW;
-      buttonFollow.classList.remove('bg-gray-dark', 'hover:bg-gray-middle')
+      buttonFollow.classList.remove('bg-gray-dark', '730:hover:bg-gray-middle')
     } else {
       buttonText.textContent = UNFOLLOW;
-      buttonFollow.classList.add('bg-gray-dark', 'hover:bg-gray-middle')
+      buttonFollow.classList.add('bg-gray-dark', '730:hover:bg-gray-middle')
     }
     buttonSvg.classList.toggle("hidden");
   });
@@ -28,12 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
   underline.style.width = `${tabs[0].offsetWidth}px`;
 
   tabsWrap.addEventListener("click", ({ target }) => {
-    underline.style.width = `${target.offsetWidth}px`;
-    underline.style.left = `${target.offsetLeft}px`;
-
-    const currentTab = target.dataset.tab;
-    categoryInfo.forEach((item) => item.classList.add('hidden'));
-    const currentInfoBlock = Array.from(categoryInfo).filter((item) => item.dataset.tab === currentTab)[0];
-    currentInfoBlock.classList.remove('hidden')
+    if(target.tagName === 'BUTTON') {
+      underline.style.width = `${target.offsetWidth}px`;
+      underline.style.left = `${target.offsetLeft}px`;
+      const currentTab = target.dataset.tab;
+      categoryInfo.forEach((item) => item.classList.add('hidden'));
+      const currentInfoBlock = Array.from(categoryInfo).filter((item) => item.dataset.tab === currentTab)[0];
+      currentInfoBlock.classList.remove('hidden')
+    }
   });
 });
